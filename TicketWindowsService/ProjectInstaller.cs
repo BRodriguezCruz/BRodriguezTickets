@@ -5,7 +5,9 @@ using System.Configuration.Install;
 namespace TicketWindowsService
 {
     [RunInstaller(true)]
-    public class ProjectInstaller : Installer
+    public class ProjectInstaller : Installer //se crea esta clase ProjectInstaller para que se pueda instalar en los servicios de windows de la maquina, si ella el proyecto no 
+                                              // puede ser instalado y no se ve reflejado para su activacion en los servicios de windows de la maquina 
+                                              //se debe agregar referencia a "using System.Configuration.Install;" en los assemblies del proyecto
     {
         private ServiceInstaller serviceInstaller;
         private ServiceProcessInstaller processInstaller;
